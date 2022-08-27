@@ -13,6 +13,7 @@ export const getProducts = async () => {
         price
         rating
         brand
+        totalRatingCount
       }
     }
   `;

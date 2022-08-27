@@ -13,7 +13,7 @@ const App = () => {
   console.log(products);
   return (
     <div className="max-w-7xl main-wrapper h-screen  mx-auto ">
-      <div className="h-full overflow-hidden bg-black bg-opacity-10  ">
+      <div className="h-full  bg-black bg-opacity-10  ">
         <SearchBar suggestions={products} />
         <Main />
       </div>
