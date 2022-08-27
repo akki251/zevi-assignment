@@ -5,3 +5,9 @@ body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
 }
+
+.main-wrapper {
+  background-image: url('../public/images/bg-home.jpg');
+  background-position: center;
+  background-size: cover;
+}

@@ -1,9 +1,11 @@
-function App() {
+import React from 'react';
+import SearchBar from './components/SearchBar';
+const App = () => {
   return (
-    <div className="App">
-      <h1 className="text-2xl font-bold bg-red-300">Hi react</h1>
+    <div className="max-w-7xl main-wrapper h-screen  mx-auto">
+      <SearchBar />
     </div>
   );
-}
+};
 
 export default App;
