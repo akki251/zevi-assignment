@@ -11,10 +11,10 @@ const Main = () => {
       <div className="h-full bg-white p-4">
         <h3 className="text-2xl font-bold">Search results</h3>
         <div className="grid grid-cols-12 py-4 ">
-          <div className=" col-span-3 sm:hidden md:block">
+          <div className=" md:col-span-3 sm:col-span-12 ">
             <Filter />
           </div>
-          <div className="col-span-9">
+          <div className="md:col-span-9 sm:col-span-12">
             <Products />
           </div>
         </div>

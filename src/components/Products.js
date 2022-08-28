@@ -10,7 +10,7 @@ const Products = () => {
     <div className="flex items-center flex-col justify-center h-full space-y-5">
       <FiShoppingBag size={30} color="blue" />
       <h3 className="text-xl font-semibold">
-        No Results found , Please try using different filters
+        No Results found ,Please try using different filters
       </h3>
     </div>
   );

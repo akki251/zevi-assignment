@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState,  useRef } from 'react';
+import { useState, useRef } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import logo from '../assets/zevi logo.png';
 

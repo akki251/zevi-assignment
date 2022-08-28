@@ -11,7 +11,7 @@ const ProductCard = ({ prod }) => {
   };
 
   return (
-    <div className="flex flex-col space-y-1   ">
+    <div className="flex flex-col space-y-1 sm:w-3/4 sm:mx-auto md:w-auto  ">
       <div className="relative card-container ">
         {favourite ? (
           <AiFillHeart

@@ -56,12 +56,15 @@ const Filter = () => {
   };
 
   return (
-    <div className=" h-full bg-white flex flex-col space-y-3   ">
+    <div className=" h-full bg-white flex flex-col space-y-3 sm:text-center  md:text-left  ">
       {/* Brands */}
-      <div className="flex flex-col space-y-3 border-b border-gray-200 w-3/4 py-3 ">
+      <div className="flex flex-col space-y-3 border-b border-gray-200 w-3/4 mx-auto md:mx-0 py-3">
         <h1 className="text-xl font-semibold mb-1">BRAND</h1>
         {brands.map((brand) => (
-          <div className="flex items-center space-x-2  " key={brand}>
+          <div
+            className="flex items-center space-x-2  justify-center md:justify-start "
+            key={brand}
+          >
             <input
               type="checkbox"
               className="brand "
@@ -76,9 +79,9 @@ const Filter = () => {
         ))}
       </div>
       {/* Price range */}
-      <div className="flex flex-col space-y-3 border-b border-gray-200 w-3/4 py-3">
+      <div className="flex flex-col space-y-3 border-b border-gray-200 w-3/4 mx-auto  md:mx-0 py-3">
         <h1 className="text-xl font-semibold mb-1">PRICE RANGE</h1>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-center md:justify-start space-x-2">
           <input
             type="checkbox"
             className="price"
@@ -90,7 +93,7 @@ const Filter = () => {
           />
           <label htmlFor="500">Under 500</label>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-center  md:justify-start space-x-2">
           <input
             type="checkbox"
             className="price"
@@ -102,7 +105,7 @@ const Filter = () => {
           />
           <label htmlFor="1000">Under 1000 To 3000</label>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-center  md:justify-start space-x-2">
           <input
             type="checkbox"
             className="price"
@@ -116,10 +119,10 @@ const Filter = () => {
         </div>
       </div>
       {/* Ratings */}
-      <div className="flex flex-col space-y-3 border-b border-gray-200 w-3/4 py-3">
+      <div className="flex flex-col space-y-3 border-b border-gray-200 w-3/4 mx-auto md:mx-0  py-3">
         <h1 className="text-xl font-semibold mb-1">Ratings</h1>
         {stars.map((item) => (
-          <div key={item} className="flex  items-center space-x-2">
+          <div key={item} className="flex justify-center  md:justify-start items-center space-x-2">
             <input
               type="checkbox"
               onClick={handleRating}
