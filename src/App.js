@@ -10,7 +10,6 @@ const App = () => {
     fetchData();
   }, [fetchData]);
 
-  console.log(products);
   return (
     <div className="max-w-7xl main-wrapper h-screen  mx-auto ">
       <div className="h-full  bg-black bg-opacity-10  ">

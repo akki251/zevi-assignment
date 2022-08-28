@@ -56,7 +56,7 @@ const Filter = () => {
   };
 
   return (
-    <div className=" h-full bg-white flex flex-col space-y-3 ">
+    <div className=" h-full bg-white flex flex-col space-y-3   ">
       {/* Brands */}
       <div className="flex flex-col space-y-3 border-b border-gray-200 w-3/4 py-3 ">
         <h1 className="text-xl font-semibold mb-1">BRAND</h1>
@@ -64,7 +64,7 @@ const Filter = () => {
           <div className="flex items-center space-x-2  " key={brand}>
             <input
               type="checkbox"
-              className="brand"
+              className="brand "
               name={brand}
               onClick={handleBrand}
               id={brand}

@@ -25,7 +25,7 @@ const useCommonStore = create((set) => ({
       // check for checking result after each filter
       let filterApplied = false;
 
-      // default set of products
+      // default array of products
       let oldProducts = state.products;
 
       // brandsFilter
@@ -47,9 +47,9 @@ const useCommonStore = create((set) => ({
       // price filter
       if (state.filter.priceFilter.length) {
         oldProducts = state.filteredProducts.length === 0 ? state.products : state.filteredProducts;
-      
+
         let productsFilterPrice_Brand = [];
-        
+
         for (let i = 0; i < state.filter.priceFilter.length; i += 2) {
           oldProducts.forEach((item) => {
             if (
@@ -69,6 +69,7 @@ const useCommonStore = create((set) => ({
         return;
       }
 
+      // Ratings filter
       if (state.filter.ratingsFilter.length) {
         oldProducts = state.filteredProducts.length === 0 ? state.products : state.filteredProducts;
         let productsFilterPrice_Brand_Rating = oldProducts.filter((item) =>
