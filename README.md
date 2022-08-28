@@ -6,11 +6,9 @@ https://zevi-assignment.netlify.app/
 
 # Shopping app with filters
 
-A app made with react, tailwind and zustand as state managment library
+An web-app made with react, tailwind and zustand as state managment library
 
-The application is composed of the following Features:
-
-
+The application compiles following Features:
 
 ## Features
 
