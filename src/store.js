@@ -13,6 +13,7 @@ const useCommonStore = create((set) => ({
   filter: {
     priceFilter: [],
     brandsFilter: [],
+    ratingsFilter: [],
   },
 
   setFilter: (filterObj) => set((state) => (state.filter = { ...state.filter, ...filterObj })),
@@ -20,23 +21,35 @@ const useCommonStore = create((set) => ({
   performGlobalFilter: function () {
     set((state) => {
       state.filteredProducts = [];
+
+      // check for checking result after each filter
       let filterApplied = false;
 
+      // default set of products
       let oldProducts = state.products;
+
+      // brandsFilter
       if (state.filter.brandsFilter.length) {
         oldProducts.forEach((item) => {
           if (state.filter.brandsFilter.includes(item.brand)) {
-            if (state.filter.brandsFilter.includes(item.brand)) {
-              state.filteredProducts = [...state.filteredProducts, item];
-            }
+            state.filteredProducts = [...state.filteredProducts, item];
           }
         });
         filterApplied = true;
       }
 
+      // checking after each filter,to validate next chain of filter on ready results
+      if (filterApplied && state.filteredProducts.length === 0) {
+        state.filteredProducts = null;
+        return;
+      }
+
+      // price filter
       if (state.filter.priceFilter.length) {
         oldProducts = state.filteredProducts.length === 0 ? state.products : state.filteredProducts;
+      
         let productsFilterPrice_Brand = [];
+        
         for (let i = 0; i < state.filter.priceFilter.length; i += 2) {
           oldProducts.forEach((item) => {
             if (
@@ -51,31 +64,27 @@ const useCommonStore = create((set) => ({
         filterApplied = true;
       }
 
-      if (filterApplied === true && state.filteredProducts.length === 0) {
+      if (filterApplied && state.filteredProducts.length === 0) {
         state.filteredProducts = null;
+        return;
       }
 
-      // console.log(state.unique);
+      if (state.filter.ratingsFilter.length) {
+        oldProducts = state.filteredProducts.length === 0 ? state.products : state.filteredProducts;
+        let productsFilterPrice_Brand_Rating = oldProducts.filter((item) =>
+          state.filter.ratingsFilter.includes(+item.rating),
+        );
 
-      // state.filteredProducts.filter((item) => state.filter.brandsFilter.includes(item.brand)),
+        state.filteredProducts = productsFilterPrice_Brand_Rating;
+        filterApplied = true;
+      }
+
+      if (filterApplied && state.filteredProducts.length === 0) {
+        state.filteredProducts = null;
+        return;
+      }
     });
   },
 }));
 
 export default useCommonStore;
-
-//   foodItems: [],
-//   searchedItems: [],
-//   isLoading: false,
-//   setIsLoading: (loadingState) => set((state) => (state.isLoading = loadingState)),
-//   searchByTerm: (searchTerm) =>
-//     set((state) => {
-//       const arr = state.foodItems.filter((item) => {
-//         if (item.name.trim().toLowerCase().includes(searchTerm.trim().toLowerCase())) {
-//           return true;
-//         }
-//       });
-
-//       state.searchedItems = arr;
-//     }),
-//   updateFoodItems: (foodItems) => set((state) => (state.foodItems = foodItems)),

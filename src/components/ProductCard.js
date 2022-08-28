@@ -45,7 +45,7 @@ const ProductCard = ({ prod }) => {
       <div>
         <StarRatings
           rating={prod.rating}
-          starRatedColor="yellow"
+          starRatedColor="rgb(255, 209, 0)"
           starDimension="20px"
           starSpacing="5px"
           numberOfStars={5}

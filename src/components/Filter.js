@@ -41,7 +41,19 @@ const Filter = () => {
     performGlobalFilter();
   };
 
-  const handleRating = () => {};
+  const handleRating = () => {
+    const ratingsEl = document.querySelectorAll('.rating');
+    const ratingsFilter = [];
+
+    Array.from(ratingsEl).forEach((item) => {
+      if (item.checked) {
+        ratingsFilter.push(+item.getAttribute('name'));
+      }
+    });
+
+    setFilter({ ratingsFilter });
+    performGlobalFilter();
+  };
 
   return (
     <div className=" h-full bg-white flex flex-col space-y-3 ">
@@ -118,7 +130,7 @@ const Filter = () => {
             <label htmlFor={item}>
               <StarRatings
                 rating={item}
-                starRatedColor="yellow"
+                starRatedColor="rgb(255, 209, 0)"
                 starDimension="20px"
                 starSpacing="5px"
                 numberOfStars={5}
